@@ -24,8 +24,31 @@ namespace ConsoleApplication1
         }
 
         //конструктор без параметров, инициализирующий все поля класса некоторыми значениями по умолчанию.
-        public Person() : this("Default_Name", "Default_Sname", new DateTime(1996, 12, 1))
+        public Person() : this("Default_Name", "Default_Sname", new DateTime(2000, 06, 29))
         { }
 
+        //Св-ва get u set
+        string StdName //sv-vo tipa string dla dostupa k poooly s imenami
+        {
+            get
+            {
+                return Name;
+            }
+        }
+        string StdLastName //СВ-ВО ТИПА стринг для доступа к полю с фамилией
+        {
+            get
+            {
+                return LastName;
+            }
+        }
+            DateTime StdBDate //свойство типа дататайме для доступа к полю с моей датой рождения
+            {
+                get
+                {
+                   return BDate;
+                }
+            }
+        }
     }
 }
