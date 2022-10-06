@@ -6,15 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine();
-            ResearchTeam std = new ResearchTeam(); //Один объект типа ResearchTeam
-            Console.WriteLine(std.ToShortString()); //Преобразовать данные в текстовый вид с помощью метода ToShortString() и вывести данные
-        }
-    }
 
     class Person
     {
@@ -24,7 +15,17 @@ namespace ConsoleApplication1
         string LastName; //закрытое поле string. фамилия
         System.DateTime BDate;//закрытое поле System.DateTime. дата рождения
 
+        //конструктор c тремя параметрами типа string, string, DateTime для инициализации всех полей класса
+        public Person(string studentName, string studentLastName, DateTime studentBDate)
+        {
+            Name = studentName;
+            LastName = studentLastName;
+            BDate = studentBDate;
+        }
 
-        
+        //конструктор без параметров, инициализирующий все поля класса некоторыми значениями по умолчанию.
+        public Person() : this("Default_Name", "Default_Sname", new DateTime(1996, 12, 1))
+        { }
+
     }
 }
