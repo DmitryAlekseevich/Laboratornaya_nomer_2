@@ -111,6 +111,19 @@ namespace ConsoleApplication1
         {
 
         }
+        public override string ToFullString()
+        {
+            return string.Format("Autor {0} Kniga {1}. Data = {2}", NameP, Autor, Data);
+        }
     }
+    class ResearchTeam
+    {
+        private string Tema;
+        private string NameOrg;
+        private int NomerReg;
+        private TimeFrame InfaProdIsled;
+        private InfaProdIsled<Paper> _publications = new InfaProdIsled<Paper>();
 
+        public ResearchTeam
+    }
 }
