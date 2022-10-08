@@ -65,8 +65,12 @@ namespace ConsoleApplication1
                 }
                 set
                 {
-                   BDate.Compare.ToDateTime(value);
+                   BDate = Convert.ToDateTime(value);
                 }
 
+    }
+    public string ToShortString() // метод который возвращает строку с Именем и Фамилией
+    {
+        return "n" + "Имя: " + Name + "n" + "Фамилия: " + LastName; // выводим все значения
     }
 }
