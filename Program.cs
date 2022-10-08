@@ -10,6 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
+		Console.WriteLine("Кто ушел не выключив компьютер, тот Дмитрий :'( Не делайте так больше");
             Person person = new Person();
             Paper p = new Paper("Влияние войны и мира на...", new Person(), new DateTime(2010, 10, 10));
         }
