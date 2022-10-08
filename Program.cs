@@ -124,6 +124,13 @@ namespace ConsoleApplication1
         private TimeFrame InfaProdIsled;
         private InfaProdIsled<Paper> _publications = new InfaProdIsled<Paper>();
 
-        public ResearchTeam
+        public ResearchTeam(string Tema, string NameOrg, int NomerReg, TimeFrame InfaProdIsled)
+        {
+            Tema = Tema;
+            NameOrg = nameorg;
+            NomerReg = namereg;
+            InfaProdIsled = infaprodisled;
+
+        }
     }
 }
