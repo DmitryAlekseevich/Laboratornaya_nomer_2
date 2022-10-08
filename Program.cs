@@ -11,16 +11,16 @@ namespace ConsoleApplication1
     {
         private
 
-        string Name; //закрытое поле string. имя
-        string LastName; //закрытое поле string. фамилия
-        System.DateTime BDate;//закрытое поле System.DateTime. дата рождения
+        string _name; //закрытое поле string. имя
+        string _lastName; //закрытое поле string. фамилия
+        System.DateTime _birhtDate;//закрытое поле System.DateTime. дата рождения
 
         //конструктор c тремя параметрами типа string, string, DateTime для инициализации всех полей класса
         public Person(string studentName, string studentLastName, DateTime studentBDate)
         {
-            Name = studentName;
-            LastName = studentLastName;
-            BDate = studentBDate;
+            _name = studentName;
+            _lastName = studentLastName;
+            _birhtDate = studentBDate;
         }
 
         //конструктор без параметров, инициализирующий все поля класса некоторыми значениями по умолчанию.
@@ -28,27 +28,38 @@ namespace ConsoleApplication1
         { }
 
         //Св-ва get u set
-        string StdName //sv-vo tipa string dla dostupa k poooly s imenami
+        string FirstName //sv-vo tipa string dla dostupa k poooly s imenami
         {
             get
             {
-                return Name;
+                return _name;
             }
         }
-        string StdLastName //СВ-ВО ТИПА стринг для доступа к полю с фамилией
+        string LastName //СВ-ВО ТИПА стринг для доступа к полю с фамилией
         {
             get
             {
-                return LastName;
+                return _lastName;
             }
         }
-            DateTime StdBDate //свойство типа дататайме для доступа к полю с моей датой рождения
+            DateTime BirthDate //свойство типа дататайме для доступа к полю с моей датой рождения
             {
                 get
                 {
-                   return BDate;
+                   return _birhtDate;
                 }
             }
         }
+        int intStdBdate //свойство типа int с методами get set для получения информации get и изменения set
+                {
+                get
+                {
+                   return Convert.Tolnt32(BDate);
+                }
+                set
+                {
+                   BDate.Compare.ToDateTime(value);
+                }
+
     }
 }
