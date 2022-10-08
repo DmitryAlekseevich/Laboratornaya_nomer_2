@@ -11,18 +11,22 @@ namespace ConsoleApplication1
         static void Main()
         {
             Person person = new Person();
+            Paper p = new Paper("Влияние войны и мира на...", new Person(), new DateTime(2010, 10, 10));
         }
     }
 
     class Person
     {
-        private
+        string _name;
+        string _lastName;
+        DateTime _birhtDate;
 
-        string _name; //закрытое поле string. имя
-        string _lastName; //закрытое поле string. фамилия
-        System.DateTime _birhtDate;//закрытое поле System.DateTime. дата рождения
-
-        //конструктор c тремя параметрами типа string, string, DateTime для инициализации всех полей класса
+        /// <summary>
+        /// конструктор c тремя параметрами типа string, string, DateTime для инициализации всех полей класса
+        /// </summary>
+        /// <param name="studentName"></param>
+        /// <param name="studentLastName"></param>
+        /// <param name="studentBDate"></param>
         public Person(string studentName, string studentLastName, DateTime studentBDate)
         {
             _name = studentName;
@@ -30,47 +34,83 @@ namespace ConsoleApplication1
             _birhtDate = studentBDate;
         }
 
-        //конструктор без параметров, инициализирующий все поля класса некоторыми значениями по умолчанию.
+        /// <summary>конструктор без параметров, инициализирующий все поля класса некоторыми значениями по умолчанию.</summary>
         public Person() : this("Default_Name", "Default_Sname", new DateTime(2000, 06, 29))
         { }
 
-        //Св-ва get u set
-        string FirstName //sv-vo tipa string dla dostupa k poooly s imenami
+
+        string FirstName
         {
             get
             {
                 return _name;
             }
         }
-        string LastName //СВ-ВО ТИПА стринг для доступа к полю с фамилией
+        string LastName
         {
             get
             {
                 return _lastName;
             }
         }
-            DateTime BirthDate //свойство типа дататайме для доступа к полю с моей датой рождения
+        DateTime BirthDate
+        {
+            get
             {
-                get
-                {
-                   return _birhtDate;
-                }
+                return _birhtDate;
             }
         }
-        int intStdBdate //свойство типа int с методами get set для получения информации get и изменения set
-                {
-                get
-                {
-                   return Convert.Tolnt32(BDate);
-                }
-                set
-                {
-                   BDate = Convert.ToDateTime(value);
-                }
+        int intStdBdate
+        {
+            get
+            {
+                return Convert.Tolnt32(BDate);
+            }
+            set
+            {
+                BDate = Convert.ToDateTime(value);
+            }
+        }
 
+        public string ToShortString()
+        {
+            return "n" + "Имя: " + Name + "n" + "Фамилия: " + LastName;
+        }
     }
-    public string ToShortString() // метод который возвращает строку с Именем и Фамилией
+
+    class Paper
     {
-        return "n" + "Имя: " + Name + "n" + "Фамилия: " + LastName; // выводим все значения
+        public
+
+        string NamePublic
+
+        { get; set; }
+
+        Person Autor
+
+        { get; set; }
+
+        DateTime Data
+
+        { get; set; }
+
+        /// <summary>
+        /// конструктор с параметрами
+        /// </summary>
+        /// <param name="NamePublic">название публикации</param>
+        /// <param name="Autor">автор публикации</param>
+        /// <param name="Data">дата чего то</param>
+        public Paper(string NamePublic, Person Autor, DateTime Data)
+        {
+            this.NamePublic = NamePublic;
+            this.Autor = Autor;
+            this.Data = Data;
+        }
+
+        private Paper() : this("что то должно быть", "и еще что то", new DateTime(2000, 06, 29))
+        {
+
+        }
     }
+
 }
