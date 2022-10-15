@@ -133,5 +133,19 @@ namespace ConsoleApplication1
             InfaProdIsled = infaprodisled;
 
         }
+
+        public ResearchTeam()
+           : this(new Person("Что то", "Еще что то", 0123456789, new TimeFrame(10), Paper.Spe * *t, 1))
+        {
+
+        }
+
+        public string Tema
+        {
+            get
+            {
+                return Tema;
+            }
+        }
     }
 }
