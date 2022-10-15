@@ -147,5 +147,29 @@ namespace ConsoleApplication1
                 return Tema;
             }
         }
+
+        public string nameorg
+        {
+            get
+            {
+                return Nameorg;
+            }
+        }
+
+        public int namereg
+        {
+            get
+            {
+                NomerReg;
+            }
+        }
+
+        public TimeFrame infaprodisled
+        {
+            get
+            {
+                return InfaProdIsled;
+            }
+        }
     }
 }
