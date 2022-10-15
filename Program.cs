@@ -171,5 +171,21 @@ namespace ConsoleApplication1
                 return InfaProdIsled;
             }
         }
+
+        public IReadOnlyList<Paper> Publications
+        {
+            get
+            {
+                return _publications.AsReadOnly();
+            }
+        }
+
+        public double ListPublic
+        {
+            get
+            {
+                return null;
+            }
+        }
     }
 }
