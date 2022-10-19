@@ -10,7 +10,10 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
-		Console.WriteLine("Кто ушел не выключив компьютер, тот Дмитрий :'( Не делайте так больше");
+            ResearchTeam std = new ResearchTeam(); //Создать один объект типа ResearchTeam
+            Console.WriteLine(std.ToShortString()); //Преобразовать данные в текстовый вид с помощью метода ToShortString() и вывести данные
+
+            Console.WriteLine("Кто ушел не выключив компьютер, тот Дмитрий :'( Не делайте так больше");
             Person person = new Person();
             Paper p = new Paper("Влияние войны и мира на...", new Person(), new DateTime(2010, 10, 10));
         }
