@@ -119,11 +119,15 @@ namespace ConsoleApplication1
     }
     class ResearchTeam
     {
-        private string Tema;
-        private string NameOrg;
-        private int NomerReg;
-        private TimeFrame InfaProdIsled;
-        private InfaProdIsled<Paper> _publications = new InfaProdIsled<Paper>();
+        private string Tema; //закрытое поле типа string c названием темы исследований
+        private string NameOrg; //закрытое поле типа string с названием организации
+        private int NomerReg; //закрытое поле типа int - регистрационный номер
+        private TimeFrame InfaProdIsled; //закрытое поле типа TimeFrame для информации о продолжительности ис-след
+        private InfaProdIsled<Paper> _publications = new InfaProdIsled<Paper>(); //закрытое поле типа Paper[]
+
+
+        //В классе ResearchTeam определить конструкторы
+        //Конструктор c параметрами типа string, string, int, TimeFrame для инициализации соответствующих полей класса
 
         public ResearchTeam(string Tema, string NameOrg, int NomerReg, TimeFrame InfaProdIsled)
         {
@@ -134,6 +138,7 @@ namespace ConsoleApplication1
 
         }
 
+        //Конструктор без параметров, инициализирующий поля класса значениями по умолчанию
         public ResearchTeam()
            : this(new Person("Что то", "Еще что то", 0123456789, new TimeFrame(10), Paper.Spe * *t, 1))
         {
@@ -172,6 +177,7 @@ namespace ConsoleApplication1
             }
         }
 
+        //Cвойство типа Paper[] для доступа к полю со списком публикаций по те-ме исследований
         public IReadOnlyList<Paper> Publications
         {
             get
@@ -180,12 +186,33 @@ namespace ConsoleApplication1
             }
         }
 
+        //Cвойство типа Paper ( только с методом get) которое возвращает ссылку на публикацию с самой поздней датой выхода; а если что, null
         public double ListPublic
         {
             get
             {
                 return null;
             }
+        }
+
+        //Метод void AddPapers ( params Paper[] ) для добавления элементов в список публикаций
+
+        public void AddPapers(params Paper[] )
+        {
+            _publications.AddRange();
+        }
+
+
+        //метод string ToFullString() для фор-мирования строки со значениями всех полей класса, включая список пуб-ликаций
+        public override string ToFullString()
+        {
+            return string.Format("\nTheme: {0}\nNameOfOrg: {1}\nNumberOfRed: {2}\nLast: {3}\nPublications: {4} ", Theme, NameOfOrg, NumberOfRed, Last, _publications);
+        }
+
+        //Метод string ToShortString(), который формирует строку со значениями всех полей класса без списка публикаций
+        public string ToShortString() // виртуальный метод который формирует строку со значениями всех полей класса без списка экзаменов, но со значением среднего балла.
+        {
+            return string.Format("\nTema: {0}\nNameorg: {1}\nNomerReg: {2}\nInfaProdIsled: {3}\n", Tema, Nameorg, NomerReg, InfaProdIsled);
         }
     }
 }
