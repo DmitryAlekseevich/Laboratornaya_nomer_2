@@ -68,17 +68,17 @@ namespace ConsoleApplication1
         {
             get
             {
-                return Convert.Tolnt32(BDate);
+                return BirthDate.Year;
             }
             set
             {
-                BDate = Convert.ToDateTime(value);
+               /// BDate = Convert.ToDateTime(value);
             }
         }
 
         public string ToShortString()
         {
-            return "n" + "Имя: " + Name + "n" + "Фамилия: " + LastName;
+            return "n" + "Имя: " + FirstName + "n" + "Фамилия: " + LastName;
         }
     }
 
@@ -111,15 +111,16 @@ namespace ConsoleApplication1
             this.Data = Data;
         }
 
-        private Paper() : this("что то должно быть", "и еще что то", new DateTime(2000, 06, 29))
+        private Paper() : this("что то должно быть", new Person(), new DateTime(2000, 06, 29))
         {
 
         }
-        public override string ToFullString()
+        public string ToFullString()
         {
-            return string.Format("Autor {0} Kniga {1}. Data = {2}", NameP, Autor, Data);
+            return string.Format("Autor {0} Kniga {1}. Data = {2}", NamePublic, Autor, Data);
         }
     }
+
     class ResearchTeam
     {
         private string Tema; //закрытое поле типа string c названием темы исследований
@@ -200,7 +201,7 @@ namespace ConsoleApplication1
 
         //Метод void AddPapers ( params Paper[] ) для добавления элементов в список публикаций
 
-        public void AddPapers(params Paper[] )
+        public void AddPapers(params Paper[] p)
         {
             _publications.AddRange();
         }
