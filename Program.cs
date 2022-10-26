@@ -13,6 +13,28 @@ namespace ConsoleApplication1
             ResearchTeam std = new ResearchTeam(); //Создать один объект типа ResearchTeam
             Console.WriteLine(std.ToShortString()); //Преобразовать данные в текстовый вид с помощью метода ToShortString() и вывести данные
 
+            // Присвоил значения всем определенным в типе ResearchTeam
+            string a = Tema;
+            string b = nameorg;
+            int с = namereg;
+            TimeFrame d = infaprodisled;
+            
+            // Преобразую в текстовый вид, и вывожу
+            string str = Convert.ToString(a b c d);
+            Console.WriteLine(str);
+            Console.ReadLine();
+
+            sms.AddPaper(publication params Paper [a, b, c, d]); //добавил элементы в список публикации
+
+            public Paper(string a, string b, int c, TimeFrame d) //вывод данных объекта ResearchTeam
+            {
+                this.a = Tema;
+                this.b = nameorg;
+                this.c = namereg;
+                this.d = infaprodisled;
+            }
+
+
             Console.WriteLine("Кто ушел не выключив компьютер, тот Дмитрий :'( Не делайте так больше");
             Person person = new Person();
             Paper p = new Paper("Влияние войны и мира на...", new Person(), new DateTime(2010, 10, 10));
