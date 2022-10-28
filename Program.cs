@@ -14,11 +14,11 @@ namespace ConsoleApplication1
             Console.WriteLine(std.ToShortString()); //Преобразовать данные в текстовый вид с помощью метода ToShortString() и вывести данные
 
             // Присвоил значения всем определенным в типе ResearchTeam
-            string a = Tema;
-            string b = nameorg;
-            int с = namereg;
-            TimeFrame d = infaprodisled;
-            
+            public string a = Tema { get; set; }
+            public string b = nameorg { get; set; }
+            public int с = namereg { get; set; }
+            public TimeFrame d = infaprodisled { get; set; }
+
             // Преобразую в текстовый вид, и вывожу
             string str = Convert.ToString(a b c d);
             Console.WriteLine(str);
@@ -33,7 +33,7 @@ namespace ConsoleApplication1
                 this.c = namereg;
                 this.d = infaprodisled;
             }
-
+           
 
             Console.WriteLine("Кто ушел не выключив компьютер, тот Дмитрий :'( Не делайте так больше");
             Person person = new Person();
@@ -43,6 +43,21 @@ namespace ConsoleApplication1
 
     class Person
     {
+    //Значение свойства, которое возвращает ссылку на публикацию с самой поздней датой выхода, если список публикаций пустой
+    private Program[] publications;
+        public Program LatestPublication
+    {
+        get
+        {
+            if (publications == null || publications.Length == 0) return null;
+
+            Program latestPublication = publications[0];
+            for (int i = 1; i < publications.Length; i++)
+                if (publications[i].PublishDate > latestPublication.PublishDate)
+                    latestPublication = publications[i];
+            return latestPublication;
+        }
+
         string _name;
         string _lastName;
         DateTime _birhtDate;
